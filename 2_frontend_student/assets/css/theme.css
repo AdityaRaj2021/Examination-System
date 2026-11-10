@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Hanken+Grotesk:wght@400;500;700&display=swap');
+:root{--ink:#0e1a33;--blue:#2455e6;--blue2:#eef2fe;--navy:#0e1a33;--bg:#f4f6fa;--line:#dde3ee;--amber:#d98a0b;--admin-line:#dde3ee}
+body{font-family:'Hanken Grotesk',system-ui,sans-serif;font-size:15px;background:var(--bg)}
+h1,h2,h3,.brand,.stat strong,.admin-logo,.stat-value{font-family:'Bricolage Grotesque',system-ui,sans-serif!important;letter-spacing:-.02em}
+:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+/* brand mark = an OMR bubble */
+.brand-icon,.admin-mark{background:transparent!important;color:transparent!important;border:3px solid currentColor;border-radius:50%!important;position:relative;font-size:0}
+.brand-icon{border-color:#fff}.admin-mark{border-color:var(--ink)}
+.brand-icon:after,.admin-mark:after{content:'';position:absolute;inset:7px;border-radius:50%;background:currentColor}
+.brand-icon:after{background:#fff}.admin-mark:after{background:var(--ink)}
+/* shell */
+.sidebar{background:var(--ink)}.nav-item{border-radius:10px}.nav-item.active{background:#fff;color:var(--ink);box-shadow:none}.nav-item.active span{font-weight:700}
+.topbar{border-bottom:1.5px solid var(--ink)}.eyebrow{display:none}.topbar h1{font-size:28px;font-weight:800}
+.card,.stat,.test-card,.panel,.stat-card{border:1.5px solid var(--line);border-radius:14px;box-shadow:none;transition:border-color .15s}
+.test-card:hover,.stat-card:hover{border-color:var(--ink)}
+.stat-icon{border-radius:50%;background:var(--blue2)}
+.button{border:1.5px solid var(--ink);border-radius:10px;color:var(--ink);font-weight:700;font-size:13px}
+.button.primary{background:var(--blue);border-color:var(--blue);color:#fff}.button:hover{box-shadow:3px 3px 0 var(--ink);transform:translate(-1px,-1px)}
+.button.danger{border-color:#c23b3b;color:#c23b3b}.button:disabled{opacity:.4;pointer-events:none}
+th{text-transform:none;letter-spacing:0;font-size:12px;color:#5d6b85}
+.pill{background:var(--blue2);color:var(--blue)}
+.dropzone{border:2px dashed var(--ink);background:#fff;border-radius:14px}.dropzone.dragover{background:var(--blue2);border-color:var(--blue)}
+/* auth + login cards */
+.auth-card,.login-card,.admin-login-box{border:1.5px solid var(--ink)!important;border-radius:16px!important;box-shadow:8px 8px 0 var(--ink)!important}
+.login-icon,.portal-label{display:none}
+/* exam: answers become OMR bubbles */
+.exam-top{position:sticky;top:0;z-index:5;background:#fff;border:1.5px solid var(--ink);border-radius:14px;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.timer{font:800 24px 'Bricolage Grotesque',sans-serif;font-variant-numeric:tabular-nums}.timer.warn{color:var(--amber)}.timer.crit{color:#c23b3b;animation:pulse 1s infinite}
+@keyframes pulse{50%{opacity:.45}}
+.exam-question h2{font-size:24px;line-height:1.3;margin:10px 0 22px}
+.answer-option{display:flex;align-items:center;gap:14px;padding:14px 16px;border:1.5px solid var(--line);border-radius:12px;margin-bottom:10px;cursor:pointer;background:#fff;transition:.12s}
+.answer-option:hover{border-color:var(--ink)}.answer-option input{position:absolute;opacity:0}
+.answer-option span b{display:inline-grid;place-items:center;width:32px;height:32px;border:2px solid var(--ink);border-radius:50%;font-size:13px;margin-right:6px;transition:.12s}
+.answer-option.selected{border-color:var(--blue);background:var(--blue2)}.answer-option.selected span b{background:var(--ink);color:#fff;transform:scale(1.08)}
+.answer-option:has(input:focus-visible){outline:3px solid var(--blue)}
+.palette button,.palette span{border-radius:50%!important;border:2px solid var(--line)!important}
+.palette .answered,.palette .done{background:var(--ink)!important;color:#fff!important;border-color:var(--ink)!important}
+.palette .current,.palette .active{border-color:var(--blue)!important;box-shadow:0 0 0 3px #2455e633}
+.kbd-hint{margin-top:14px;font-size:12px;color:#5d6b85}
+.result-score{font-family:'Bricolage Grotesque',sans-serif;font-weight:800}
+.toast{border-radius:10px;background:var(--ink)}
+/* admin console */
+.admin-sidebar{background:var(--ink)!important}.admin-nav button.active{background:#fff!important;color:var(--ink)!important}
+.admin-btn{border:1.5px solid var(--ink)!important;border-radius:10px!important}.admin-btn.primary{background:var(--blue)!important;border-color:var(--blue)!important}
+@media(max-width:760px){.exam-top{flex-wrap:wrap}.exam-layout{display:block}.topbar{padding:16px}.content{padding:16px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* ExamPro PHP build: make the HTML [hidden] attribute always win */
+[hidden]{display:none!important}
